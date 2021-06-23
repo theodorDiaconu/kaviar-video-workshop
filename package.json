@@ -1,0 +1,51 @@
+{
+  "name": "foundation-workshop",
+  "version": "1.0.0",
+  "description": "Kaviar Foundation Workshop",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kaviarjs/template"
+  },
+  "scripts": {
+    "compile": "tsc",
+    "watch": "tsc -w",
+    "pretest": "npm run compile",
+    "test:dev": "jest --watch",
+    "test:clean": "jest --clearCache",
+    "test:watch": "jest --verbose --watch dist/__tests__/index.js",
+    "testonly": "npm test",
+    "test:ci": "npm run coverage -- --ci --maxWorkers=2  --reporters=default --reporters=jest-junit",
+    "coverage": "npm test -- --coverage",
+    "coverage:upload": "codecov",
+    "prepublishOnly": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.3",
+    "@types/chai-as-promised": "^7.1.2",
+    "@types/graphql": "^0.11.3",
+    "@types/jest": "^25.2.3",
+    "@types/node": "^8.0.28",
+    "@typescript-eslint/eslint-plugin": "2.3.0",
+    "@typescript-eslint/parser": "2.3.0",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "6.3.0",
+    "eslint-plugin-prettier": "3.1.1",
+    "jest": "^27.0.5",
+    "jest-junit": "^10.0.0",
+    "prettier": "^2.0.5",
+    "source-map-support": "^0.5.13",
+    "ts-jest": "^27.0.3",
+    "typescript": "^4.0.2"
+  },
+  "typings": "dist/index.d.ts",
+  "typescript": {
+    "definition": "dist/index.d.ts"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@kaviar/core": "^1.1.7"
+  }
+}
